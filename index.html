@@ -81,14 +81,6 @@
       transform: scale(1.2);
     }
 
-    /* Likes */
-    .likes {
-      padding: 0 10px;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
     /* Caption */
     .caption {
       padding: 0 10px 15px;
@@ -97,11 +89,6 @@
 
     .caption strong {
       margin-right: 5px;
-    }
-
-    /* Liked heart style */
-    .liked {
-      color: red;
     }
   </style>
 </head>
@@ -123,43 +110,16 @@
 
     <!-- Action buttons -->
     <div class="actions">
-      <i class="far fa-heart" id="likeBtn"></i>   
+      <i class="far fa-heart"></i>   
       <i class="far fa-comment"></i> 
       <i class="far fa-paper-plane"></i>
     </div>
 
-    <!-- Likes counter -->
-    <div class="likes" id="likesCount">0 likes</div>
-
     <!-- Caption -->
     <div class="caption">
-      <strong>Java</strong> an object-oriented, platform-independent, secure, robust, versatile programming language.
+      <strong>Java an object-oriented, platform-independent, secure, robust, versatile programming language.</strong> 
     </div>
   </div>
 
-  <script>
-    const likeBtn = document.getElementById("likeBtn");
-    const likesCount = document.getElementById("likesCount");
-    let liked = false;
-    let likes = 0;
-
-    likeBtn.addEventListener("click", () => {
-      liked = !liked;
-      if (liked) {
-        likes++;
-        likeBtn.classList.remove("far");
-        likeBtn.classList.add("fas", "liked"); // filled red heart
-      } else {
-        likes--;
-        likeBtn.classList.remove("fas", "liked");
-        likeBtn.classList.add("far"); // outline heart
-      }
-      likesCount.textContent = likes + (likes === 1 ? " like" : " likes");
-    });
-  </script>
-
 </body>
 </html>
-
-
-
